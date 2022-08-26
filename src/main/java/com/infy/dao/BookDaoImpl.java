@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import com.infy.exception.HibernateException;
 
+
 public class BookDaoImpl implements BookDao {
 
 	private static final Logger logger = LoggerFactory.getLogger(BookDaoImpl.class);
@@ -29,7 +30,7 @@ public class BookDaoImpl implements BookDao {
 		} catch (HibernateException re) {
 			logger.error("error occured with exception", re);
 		}
-		return id;
+		return null;
 
 	}
 

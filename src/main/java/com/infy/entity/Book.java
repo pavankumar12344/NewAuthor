@@ -33,6 +33,12 @@ public class Book {
 		this.author = author;
 	}
 
+	public Book(int bid, String title) {
+		super();
+		this.bid = bid;
+		this.title = title;
+	}
+
 	public int getId() {
 		return bid;
 	}

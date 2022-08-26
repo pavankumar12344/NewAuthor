@@ -6,8 +6,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import com.infy.entity.Author;
 import com.infy.exception.HibernateException;
+
 
 public class AuthorDaoImpl implements AuthorDao {
 
@@ -20,16 +22,16 @@ public class AuthorDaoImpl implements AuthorDao {
 	}
 
 	@Override
-	public Author addAuthor(Author a) {
+	public Author addAuthor(Author author) {
 		try {
 			Session session = this.sessionFactory.getCurrentSession();
-			session.persist(a);
-			logger.info("Author saved successfully, Author Details=" + a);
-			return a;
+			session.persist(author);
+			logger.info("Author saved successfully, Author Details=" + author);
+			return author;
 		} catch (HibernateException re) {
 			logger.error("error occured with exception", re);
 		}
-		return a;
+		return author;
 	}
 
 	@SuppressWarnings("unchecked")
@@ -38,8 +40,8 @@ public class AuthorDaoImpl implements AuthorDao {
 		try {
 			Session session = this.sessionFactory.getCurrentSession();
 			List<Author> authorList = session.createQuery("from Author").list();
-			for (Author a : authorList) {
-				logger.info("Author List:" + a);
+			for (Author author : authorList) {
+				logger.info("Author List:" + author);
 			}
 			return authorList;
 		} catch (HibernateException re) {
@@ -52,9 +54,9 @@ public class AuthorDaoImpl implements AuthorDao {
 	public Author getAuthorById(int id) {
 		try {
 			Session session = this.sessionFactory.getCurrentSession();
-			Author a = (Author) session.get(Author.class, id);
-			logger.info("Author fetched successfully, Author details=" + a);
-			return a;
+			Author author = (Author) session.get(Author.class, id);
+			logger.info("Author fetched successfully, Author details=" + author);
+			return author;
 		} catch (HibernateException re) {
 			logger.error("error occured with exception", re);
 		}
