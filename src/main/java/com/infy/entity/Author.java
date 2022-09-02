@@ -36,6 +36,10 @@ public class Author {
 		this.books = books;
 	}
 
+	public Author(int i, String string) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getId() {
 		return aid;
 	}

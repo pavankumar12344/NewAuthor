@@ -15,7 +15,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -26,9 +25,8 @@ import com.infy.entity.Author;
 import com.infy.entity.Book;
 import com.infy.service.AuthorService;
 
-public class AuthorTest {
+public class ControllerTest {
 
-	@Autowired
 	MockMvc mockMvc;
 
 	ObjectMapper mapper = new ObjectMapper();
@@ -50,7 +48,6 @@ public class AuthorTest {
 	public void getAuthorTest() throws Exception {
 
 		Book b1 = new Book(1, "k1");
-
 		Book b2 = new Book(2, "k2");
 
 		Author author = new Author(1, "kartik", Arrays.asList(b1, b2));
@@ -66,11 +63,9 @@ public class AuthorTest {
 	public void getAllRecordsSuccess() throws Exception {
 
 		Book b1 = new Book(1, "k1");
-
 		Book b2 = new Book(2, "k2");
 
 		Author a1 = new Author(1, "kartik", Arrays.asList(b1, b2));
-
 		Author a2 = new Author(2, "vennela", Arrays.asList(b1, b2));
 
 		List<Author> author = new ArrayList<Author>(Arrays.asList(a1, a2));
@@ -86,7 +81,6 @@ public class AuthorTest {
 	public void addAuthorSuccess() throws Exception {
 
 		Book b1 = new Book(1, "k1");
-
 		Book b2 = new Book(2, "k2");
 
 		Author author = new Author(1, "kartik", Arrays.asList(b1, b2));
@@ -112,4 +106,3 @@ public class AuthorTest {
 	}
 
 }
-

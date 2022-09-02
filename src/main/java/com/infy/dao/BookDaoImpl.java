@@ -30,7 +30,7 @@ public class BookDaoImpl implements BookDao {
 		} catch (HibernateException re) {
 			logger.error("error occured with exception", re);
 		}
-		return null;
+		return id;
 
 	}
 

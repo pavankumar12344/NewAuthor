@@ -48,6 +48,7 @@ public class AuthorDaoImpl implements AuthorDao {
 			logger.error("error occured with exception", re);
 		}
 		return null;
+		
 	}
 
 	@Override
