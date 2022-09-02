@@ -101,32 +101,3 @@ public class DaoTest {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//assertEquals(author, authorDao.addAuthor(Mockito.any(Author.class)));
-// Mockito.verify(session, Mockito.times(1)).persist(ArgumentMatchers.any(Author.class));
-//when(a1.getName()).thenReturn(author.get(0).getName());
-//MyList myList = mock(MyList.class);
-//doNothing().when(myList).add(isA(Integer.class), isA(String.class));
-//myList.add(0, "");
-//
-//verify(myList, times(1)).add(0, "");
